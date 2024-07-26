@@ -2,7 +2,7 @@ const path = require('path');
 const { Sequelize } = require('sequelize')
 const { MSG_DB_CONNECTION } = require('../constants/constants')
 
-const dotenvPath = path.resolve(__dirname, '../config/.env');
+const dotenvPath = path.resolve(__dirname, '../.env');
 
 require('dotenv').config({ path: path.resolve(__dirname, dotenvPath) });
 

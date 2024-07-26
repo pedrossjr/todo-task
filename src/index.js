@@ -1,21 +1,8 @@
 const express = require('express')
-//const bodyParser = require ('body-parser') 
-//const os = require ('os')
 const exphbs = require('express-handlebars')
 const app = express()
 
-/*
-app.use (bodyParser.json ())
-app.use (bodyParser.urlencoded ({extended: true}))
-
-app.get ('/', (req, res, próximo) => { 
-  res.send (os.platform ()); 
-})
-*/
-
-const conn = require('./db/conn')
-
-//const Task = require('./src/models/Task')
+const conn = require('../db/conn')
 
 const taskRoutes = require('./routes/tasksRoutes')
 
