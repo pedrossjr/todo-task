@@ -1,13 +1,29 @@
-<h3>Criar nova Tarefa</h3>
+{{#if this.message}}
+<section class="message message-{{this.type}}">
+    <p>{{this.message}}</p>
+    <span id="close-message"><i class="bi bi-x"></i></span>
+</section>
+{{/if}}
+
+{{#if this.redirect}}
+<script>
+    setTimeout(function () {
+        window.location.href = '/tasks';
+    }, 4000);
+</script>
+{{/if}}
+
+<h3>Criar Nova Tarefa</h3>
+
 <form action="/tasks/add" method="post">
     <div class="form-control">
         <label for="title">Título:</label>
-        <input type="text" name="title" placeholder="O que você vai fazer?" required />
+        <input type="text" name="title" placeholder="O que você vai fazer?" />
     </div>
     <div class="form-control">
         <label for="description">Descrção:</label>
-        <textarea name="description" placeholder="Descreva a sua tarefa..." required></textarea>
+        <textarea name="description" placeholder="Descreva a sua tarefa..."></textarea>
     </div>
     <input type="submit" value="Criar">
-    <a href="/tasks" class="cancelar">Cancelar</a>
+    <a href="/tasks" class="cancelar">Sair</a>
 </form>

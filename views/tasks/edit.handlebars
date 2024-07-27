@@ -1,4 +1,20 @@
-<h3>Tarefa: {{task.title}}</h3>
+{{#if this.message}}
+<section class="message message-{{this.type}}">
+    <p>{{this.message}}</p>
+    <span id="close-message"><i class="bi bi-x"></i></span>
+</section>
+{{/if}}
+
+{{#if this.redirect}}
+<script>
+    setTimeout(function () {
+        window.location.href = '/tasks';
+    }, 4000);
+</script>
+{{/if}}
+
+<h3>{{task.title}}</h3>
+
 <form action="/tasks/edit" method="post">
     <input type="hidden" name="id" value="{{task.id}}">
     <div class="form-control">
@@ -10,5 +26,5 @@
         <textarea name="description" placeholder="Descreva a tarefa...">{{task.description}}</textarea>
     </div>
     <input type="submit" value="Gravar" />
-    <a href="/tasks" class="cancelar">Cancelar</a>
+    <a href="/tasks" class="cancelar">Sair</a>
 </form>
